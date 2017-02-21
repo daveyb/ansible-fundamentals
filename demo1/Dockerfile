@@ -1,5 +1,5 @@
 FROM ubuntu
 
-RUN apt-get update && apt-get install openssh-server
+RUN apt-get update && apt-get install -y openssh-server
 
-CMD ["/bin/bash"]
+CMD ["tail", "-f", "/dev/null"]

@@ -9,10 +9,10 @@ services:
       - target2:target2
 
   target1:
-    build: bootstrap/target/
+    build: bootstrap/target-host/
 
   target2:
-    build: bootstrap/target/
+    build: bootstrap/target-host/
 
 volumes:
   ansible:

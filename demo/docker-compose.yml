@@ -1,0 +1,19 @@
+version: '2'
+services:
+  control:
+    build: bootstrap/control/
+    volumes: 
+      - ./ansible:/ansible:ro
+    links:
+      - target1:target1
+      - target2:target2
+
+  target1:
+    build: bootstrap/target/
+
+  target2:
+    build: bootstrap/target/
+
+volumes:
+  ansible:
+    driver: local

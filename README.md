@@ -14,7 +14,7 @@ git clone https://github.com/daveyb/ansible-fundamentals.git
 
 - Change into the demo directory and bring up the ansible sandbox cluster (this will take a few minutes)
 ```
-cd ansible-fundamentals/demo
+cd ~/ansible-fundamentals/demo
 docker-compose up -d
 ```
 

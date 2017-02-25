@@ -1,0 +1,45 @@
+---
+- hosts: web
+  tasks:
+    
+  - block: 
+    - name: install nodejs
+      package:
+        name: nodejs
+        state: latest
+
+    - name: symlink /usr/bin/nodejs to /usr/bin/node
+      file:
+        src: /usr/bin/nodejs
+        dest: /usr/bin/node
+        state: link
+
+    - name: install npm
+      package:
+        name: npm
+        state: latest
+    become: true
+
+  - name: ensure node dir exists
+    file:
+      path: /home/automation_user/node
+      state: directory 
+
+  - name: copy main.js and set permissions
+    copy:
+      src: files/main.js
+      dest: /home/automation_user/node/main.js
+      mode: 0755
+
+  - name: npm install forever
+    npm:
+      name: forever
+      path: /home/automation_user/node
+      global: yes
+    become: true
+
+  - name: stop main.js forever
+    shell: forever stopall
+
+  - name: run main.js forever
+    shell: forever start /home/automation_user/node/main.js

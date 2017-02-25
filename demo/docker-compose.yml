@@ -3,16 +3,30 @@ services:
   control:
     build: bootstrap/control/
     volumes: 
-      - ./ansible:/ansible:ro
+      - ./ansible:/ansible:rw
     links:
       - target1:target1
       - target2:target2
 
+  target0:
+    build: bootstrap/target-host/
+    ports:
+      - "8080:8080"
+
   target1:
     build: bootstrap/target-host/
-
+    ports:
+      - "8081:8080"
+  
   target2:
     build: bootstrap/target-host/
+    ports:
+      - "8082:8080"
+
+  target3:
+    build: bootstrap/target-host/
+    ports:
+      - "8083:8080"
 
 volumes:
   ansible:

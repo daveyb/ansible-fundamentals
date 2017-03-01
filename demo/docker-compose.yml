@@ -4,9 +4,6 @@ services:
     build: bootstrap/control/
     volumes: 
       - ./ansible:/ansible:rw
-    links:
-      - target1:target1
-      - target2:target2
 
   target0:
     build: bootstrap/target-host/

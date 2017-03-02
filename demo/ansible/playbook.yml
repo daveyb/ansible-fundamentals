@@ -26,8 +26,8 @@
       state: directory 
 
   - name: copy main.js and set permissions
-    copy:
-      src: files/main.js
+    template:
+      src: templates/main.js.j2
       dest: /home/automation_user/node/main.js
       mode: 0755
 

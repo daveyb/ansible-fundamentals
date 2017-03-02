@@ -8,7 +8,7 @@ const PORT=8080;
 function handleRequest(request, response){
 
     response.writeHead(200, {'Content-Type': 'text/plain'});
-    response.write('Hello World! from {{ ansible_default_ipv4.address }}\n')
+    response.write('Hello World! from {{ ansible_host }} ({{ ansible_default_ipv4.address }})\n')
     response.end();
 
 }

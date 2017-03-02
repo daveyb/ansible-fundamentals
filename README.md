@@ -3,7 +3,7 @@ Material associated with Ansible Fundamentals webinar
 
 ## Getting Started
 
-- Install docker toolbox for [Mac](https://www.docker.com/products/docker-toolbox) or [Windows] (https://www.docker.com/products/docker-toolbox) [*] (https://github.com/daveyb/ansible-fundamentals#windows-disclaimer-windows-disclaimer)
+- Install docker toolbox for [Mac](https://www.docker.com/products/docker-toolbox) or [Windows] (https://www.docker.com/products/docker-toolbox) [*] (#windows-disclaimer)
   - Install [docker-engine](https://docs.docker.com/engine/installation/) and [docker-compose] (https://docs.docker.com/compose/install/) for Linux
 
 - Clone this repo to your local computer

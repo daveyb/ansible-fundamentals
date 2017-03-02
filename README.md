@@ -29,10 +29,10 @@ ansible-playbook playbook.yml
 docker-compose down
 ```
 
-## Rebuild the Cluster
+## Rebuild the Cluster from scratch
 ```
 docker-compose up --build
 ```
 
-## Windows Disclaimer (#windows-disclaimer)
+## Windows Disclaimer
 The latest docker toolbox for Windows 10 preview includes support for Linux containers via Hyper-V virtualization. This configuration has not been tested.

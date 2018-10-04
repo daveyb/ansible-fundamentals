@@ -8,17 +8,11 @@
         name: nodejs
         state: latest
 
-    - name: symlink /usr/bin/nodejs to /usr/bin/node
-      file:
-        src: /usr/bin/nodejs
-        dest: /usr/bin/node
-        state: link
-
     - name: install npm
       package:
         name: npm
         state: latest
-    become: true
+    become: yes
 
   - name: ensure node dir exists
     file:
@@ -36,7 +30,7 @@
       name: forever
       path: /home/automation_user/node
       global: yes
-    become: true
+    become: yes
 
   - name: stop main.js forever
     shell: forever stopall

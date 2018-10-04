@@ -1,6 +1,6 @@
 FROM ubuntu
 
-RUN apt-get update && apt-get install -y openssh-server sudo \
+RUN apt-get update && apt-get install -y iproute2 openssh-server sudo \
     && rm -rf /var/lib/apt/lists/* \
     && sed -i 's/^#AuthorizedKeysFile/AuthorizedKeysFile/g' /etc/ssh/sshd_config \
     && mkdir /var/run/sshd \
